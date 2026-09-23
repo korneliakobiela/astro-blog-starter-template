@@ -5,6 +5,14 @@
  */
 
 :root {
+	/* CSS HEX */
+	--olive-leaf: #666235ff;
+	--dusty-olive: #7e7a4aff;
+	--palm-leaf: #90906cff;
+	--dry-sage: #a9ac85ff;
+	--floral-white: #fbf8edff;
+	--ink-black: #090418ff;
+	--vintage-grape: #583c71ff;
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
@@ -35,11 +43,11 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
+	color: var(--ink-black);
+	background-color: var(--dry-sage);
 	font-size: 20px;
 	line-height: 1.7;
 }
