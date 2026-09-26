@@ -16,4 +16,9 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+const images = defineCollection({
+	// Load Markdown and MDX files in the `src/content/images/` directory.
+	loader: glob({ base: "./src/content/images", pattern: "**/*.{jpg}" }),
+});
+
+export const collections = { blog, images };

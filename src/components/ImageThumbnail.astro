@@ -1,0 +1,57 @@
+---
+const { src, alt, title } = Astro.props;
+---
+
+<div class="thumbnail">
+    <div class="thumbnail-frame">
+        <picture>
+            <source srcset={src} type="image/jpg" />
+            <img src={src} alt={alt} class="thumbnail-image" />
+        </picture>
+    </div>
+    <section class="thumbnail-info">
+        <header>
+            <h2>{title}</h2>
+        </header>
+    </section>
+</div>
+
+<style>
+    .thumbnail {
+        width: 150px;
+        height: 250px;
+        background-color: var(--linen);
+        padding: 0.5em;
+    }
+
+    .thumbnail:hover {
+        background-color: var(--floral-white);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+
+    }
+    .thumbnail-frame {
+        width: 100%;
+        max-width: 120px;
+        margin: auto;
+        border: solid var(--vintage-grape) 2px;
+        overflow: hidden;
+    }
+    .thumbnail-image {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        height: auto;
+        padding: 0.2em;
+    }
+    .thumbnail h2 {
+        line-height: 1.2em;
+        margin: 0.7em 0 0 0;
+        font-family: 'Cantarell', sans-serif;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        text-align: center;
+        color: var(--olive-leaf);
+    }
+</style>

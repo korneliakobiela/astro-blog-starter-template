@@ -2,6 +2,9 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ImageThumbnail from '../components/ImageThumbnail.astro';
+import ThumbnailGrid from '../components/ThumbnailGrid.astro';
+import mainImage from '../images/main.jpg';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -13,6 +16,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
+
 			<h1>🧑‍🚀 Hello, Astronaut!</h1>
 			<p>
 				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
@@ -26,7 +30,38 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				React, or Vue to your project.
 			</p>
 			<p>Here are a few ideas on how to get started with the template:</p>
-
+			<ThumbnailGrid>
+				<ImageThumbnail
+					src={mainImage.src}
+					alt="Zdjęcie kobiety leżącej na w rzece na kamieni, w otoczeniu kwiatów."
+					title="Astro Illustration"
+				/>
+				<ImageThumbnail
+					src={mainImage.src}
+					alt="Zdjęcie kobiety leżącej na w rzece na kamieni, w otoczeniu kwiatów."
+					title="Astro Illustration"
+				/>
+				<ImageThumbnail
+					src={mainImage.src}
+					alt="Zdjęcie kobiety leżącej na w rzece na kamieni, w otoczeniu kwiatów."
+					title="Astro Illustration"
+				/>
+				<ImageThumbnail
+					src={mainImage.src}
+					alt="Zdjęcie kobiety leżącej na w rzece na kamieni, w otoczeniu kwiatów."
+					title="Astro Illustration"
+				/>
+				<ImageThumbnail
+					src={mainImage.src}
+					alt="Zdjęcie kobiety leżącej na w rzece na kamieni, w otoczeniu kwiatów."
+					title="Astro Illustration"
+				/>
+								<ImageThumbnail
+					src={mainImage.src}
+					alt="Zdjęcie kobiety leżącej na w rzece na kamieni, w otoczeniu kwiatów."
+					title="Astro Illustration"
+				/>				
+			</ThumbnailGrid>
 		</main>
 		<Footer />
 	</body>
