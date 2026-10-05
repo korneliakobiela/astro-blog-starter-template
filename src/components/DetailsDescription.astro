@@ -1,0 +1,30 @@
+---
+const { title, description } = Astro.props;
+---
+<header>
+    <h2>{title}</h2>
+</header>
+<article>
+    <p>{description}</p>
+</article>
+
+<style>
+    header {
+        margin-bottom: 1em;
+        color: var(--vintage-grape);
+    }
+
+    h2 {
+        font-size: 2em;
+        font-weight: bold;
+        margin: 0;
+        font-family: 'Mea Culpa', sans-serif;
+        color: var(--vintage-grape);
+    }
+
+    article {
+        font-size: 1rem;
+        line-height: 1.5;
+        font-family: 'Cantarell', sans-serif;
+    }
+</style>

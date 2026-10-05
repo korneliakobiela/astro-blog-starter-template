@@ -1,0 +1,43 @@
+---
+---
+<div class="image-details">
+    <div class="image-frame">
+        <picture>
+            <source srcset={Astro.props.src} type="image/jpg" />
+            <img src={Astro.props.src} alt={Astro.props.alt} class="image" />
+        </picture>
+    </div>
+    <section class="image-info">
+        <slot />
+    </section>
+</div>
+
+<style>
+    .image-details {
+        width: 100%;
+        max-width: 750px;
+        margin: 1em auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .image-frame {
+        width: 320px;
+        max-width: 100%;
+    }
+
+    .image-frame img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 0;
+    }
+
+    .image-info {
+        width: 390px;
+        max-width: 100%;
+        padding: 1em;
+        background-color: var(--linen);
+        box-sizing: border-box;
+    }
+</style>
