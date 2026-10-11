@@ -1,0 +1,28 @@
+---
+import Header from '../components/Header.astro';
+import ImageDetails from '../components/ImageDetails.astro';
+import BaseHead from '../components/BaseHead.astro';
+import DetailsDescription from '../components/DetailsDescription.astro';
+import Footer from '../components/Footer.astro';
+
+const { title, description, image } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <BaseHead title={title} description={description} />
+</head>
+<body>
+    <Header></Header>
+    <main>
+        <ImageDetails src={image} alt={title}>
+        <DetailsDescription
+            title={title}
+        >
+            <slot></slot>
+        </DetailsDescription>
+        </ImageDetails>
+    </main>
+    <Footer></Footer>
+</body>
+</html>

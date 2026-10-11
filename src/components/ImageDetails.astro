@@ -19,11 +19,16 @@
         margin: 1em auto;
         display: flex;
         justify-content: space-between;
+        align-items: stretch;
     }
 
     .image-frame {
         width: 320px;
         max-width: 100%;
+    }
+
+    .image-frame picture {
+        display: block;
     }
 
     .image-frame img {
@@ -37,6 +42,8 @@
         width: 390px;
         max-width: 100%;
         padding: 1em;
+        min-height: 0;
+        overflow: auto;
         background-color: var(--linen);
         box-sizing: border-box;
     }
