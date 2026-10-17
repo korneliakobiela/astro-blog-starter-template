@@ -1,0 +1,45 @@
+[{
+    "id": "digitalis-purpurea-2026_01",
+    "title": "Digitalis purpurea",
+    "polishTitle": "Naparstnica purpurowa",
+    "date": "2026-10-15",
+    "link": "/img/naparstnica-sm.jpg",
+    "originalAvailable": true,
+    "printAvailable": true,
+    "digitalAvailable": true,
+    "format": "A4",
+    "digitalResolution": "600dpi"
+}, {
+    "id": "solanum-tuberosum-2026_01",
+    "title": "Solanum tuberosum",
+    "polishTitle": "Ziemniak zwyczajny",
+    "date": "2026-09-20",
+    "link": "/img/ziemniak-sm.jpg",
+    "originalAvailable": false,
+    "printAvailable": false,
+    "digitalAvailable": true,
+    "format": "A4",
+    "digitalResolution": "600dpi"
+}, {
+    "id": "matricaria-chamomilla-2026_01",
+    "title": "Matricaria chamomilla",
+    "polishTitle": "Rumianek pospolity",
+    "date": "2026-05-10",
+    "link": "/img/rumianek-sm.jpg",
+    "originalAvailable": true,
+    "printAvailable": true,
+    "digitalAvailable": true,
+    "format": "A4",
+    "digitalResolution": "600dpi"
+}, {
+    "id": "centaurea-cyanus-2025_01",
+    "title": "Centaurea cyanus",
+    "polishTitle": "Chaber bławatek",
+    "date": "2025-11-10",
+    "link": "/img/chaber-sm.jpg",
+    "originalAvailable": true,
+    "printAvailable": true,
+    "digitalAvailable": true,
+    "format": "A4",
+    "digitalResolution": "300dpi"
+}]

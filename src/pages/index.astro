@@ -1,14 +1,17 @@
 ---
+import { type CollectionEntry, getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ImageThumbnail from '../components/ImageThumbnail.astro';
-import ThumbnailGrid from '../components/ThumbnailGrid.astro';
-import mainImage from '../images/main.jpg';
-import ziemniakImage from '../images/ziemniak-sm.jpg';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import ImageDetails from '../components/ImageDetails.astro';
-import DetailsDescription from '../components/DetailsDescription.astro';
+import ThumbnailGrid from '../components/ThumbnailGrid.astro';
+import ImageThumbnail from '../components/ImageThumbnail.astro';
+
+type Props = CollectionEntry<'illustrations'>['data'];
+
+const illustrations = (await getCollection('illustrations')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+).slice(0, 6);
 ---
 
 <!doctype html>
@@ -19,12 +22,15 @@ import DetailsDescription from '../components/DetailsDescription.astro';
 	<body>
 		<Header />
 		<main>
-			<ImageDetails src={ziemniakImage.src} alt="Solanum tuberosum - ilustracja akwarelowa ziemniaka">
-				<DetailsDescription
-					title="Solanum tuberosum"
-					description="Solanum tuberosum, commonly known as the potato, is a starchy tuber of the plant Solanum tuberosum. It is a root vegetable native to the Americas and is a staple food in many parts of the world. Potatoes are rich in carbohydrates and provide essential nutrients such as vitamin C, potassium, and dietary fiber. They can be prepared in various ways, including boiling, baking, frying, and mashing."
-				/>
-			</ImageDetails>
+			<ThumbnailGrid>
+				{illustrations.map((illustration) => (
+					<ImageThumbnail
+						src={illustration.data.link}
+						alt={illustration.data.polishTitle}
+						title={illustration.data.title}
+					/>
+				))}
+			</ThumbnailGrid>
 		</main>
 		<Footer />
 	</body>
