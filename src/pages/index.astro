@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import ThumbnailGrid from '../components/ThumbnailGrid.astro';
 import ImageThumbnail from '../components/ImageThumbnail.astro';
+import WhimsyHeader from '../components/WhimsyHeader.astro';
 
 type Props = CollectionEntry<'illustrations'>['data'];
 
@@ -22,6 +23,7 @@ const illustrations = (await getCollection('illustrations')).sort(
 	<body>
 		<Header />
 		<main>
+			<WhimsyHeader title="Najnowsze ilustracje" color="vintage-grape" />
 			<ThumbnailGrid>
 				{illustrations.map((illustration) => (
 					<ImageThumbnail

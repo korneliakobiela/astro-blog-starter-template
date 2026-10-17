@@ -1,8 +1,9 @@
 ---
+import WhimsyHeader from './WhimsyHeader.astro';
 const { title } = Astro.props;
 ---
 <header>
-    <h2>{title}</h2>
+    <WhimsyHeader title={title} color="olive-leaf" />
 </header>
 <article>
     <p><slot></slot></p>
@@ -14,23 +15,6 @@ const { title } = Astro.props;
         color: var(--olive-leaf);
     }
 
-    h2 {
-        font-size: 2em;
-        font-weight: bold;
-        margin: 0;
-        font-family: 'Mea Culpa', sans-serif;
-        color: var(--olive-leaf);
-    }
-
-    h2::before, h2::after {
-        content: '–––––––––– ❦ ––––––––––';
-        color: var(--olive-leaf);
-        display: block;
-        text-align: center;
-        font-size: 0.7em;
-        font-family: "Montserrat", sans-serif;
-        font-weight: 300;
-    }
     article {
         font-size: 1rem;
         line-height: 1.5;
