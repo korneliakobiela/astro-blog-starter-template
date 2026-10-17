@@ -6,11 +6,11 @@ import { SITE_TITLE } from '../consts';
 <header>
 	<nav>
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/ilustracje">Ilustracje</HeaderLink>
-			<HeaderLink href="/dopobrania">Do pobrania</HeaderLink>
-			<HeaderLink href="/omnie">O mnie</HeaderLink>
-			<HeaderLink href="/contact">Kontakt</HeaderLink>
+			<HeaderLink href="/" class:list={[{ active: Astro.url.pathname === '/' }]}>Home</HeaderLink>
+			<HeaderLink href="/ilustracje" class:list={[{ active: Astro.url.pathname === '/ilustracje' }]}>Ilustracje</HeaderLink>
+			<HeaderLink href="/dopobrania" class:list={[{ active: Astro.url.pathname === '/dopobrania' }]}>Do pobrania</HeaderLink>
+			<HeaderLink href="/omnie/bio" class:list={[{ active: Astro.url.pathname.startsWith('/omnie') }]}>O mnie</HeaderLink>
+			<HeaderLink href="/contact" class:list={[{ active: Astro.url.pathname === '/contact' }]}>Kontakt</HeaderLink>
 		</div>
 	</nav>
 </header>

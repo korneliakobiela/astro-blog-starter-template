@@ -57,7 +57,7 @@ main {
 	width: 730px;
 	max-width: calc(100% - 2em);
 	margin: auto;
-	padding: 3em 1em;
+	padding: 3.5em 1em;
 }
 h1,
 h2,
@@ -144,7 +144,33 @@ hr {
 		padding: 1em;
 	}
 }
-
+nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-self: center;
+		width: 750px;
+		margin: 1em auto;
+	}
+	nav a {
+		padding: 0.5em 1.5em;
+		margin: 0.5em auto;
+		color: var(--floral-white);
+		text-decoration: none;
+		background-color: var(--dusty-olive);
+		text-transform: uppercase;
+		font-size: 0.8em;
+	}
+	nav a:hover {
+		text-decoration: none;
+		background-color: var(--olive-leaf);
+		color: var(--floral-white);
+		transition: all 0.3s ease-in-out;
+	}
+	nav a.active {
+		text-decoration: none;
+		background-color: var(--olive-leaf);
+	}
 .sr-only {
 	border: 0;
 	padding: 0;
@@ -161,6 +187,11 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+.active {
+	background-color: var(--olive-leaf);
+	color: var(--floral-white);
 }
 ul {
 	padding-left: 1em;
