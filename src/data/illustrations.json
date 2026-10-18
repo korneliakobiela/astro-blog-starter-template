@@ -14,7 +14,11 @@
     "title": "Cichorium intybus",
     "polishTitle": "Cykoria podróżnik",
     "date": "2026-10-15",
+<<<<<<< HEAD
     "link": "/img/cykoria-sm.jpg",
+=======
+    "link": "/img/Cykoria-sm.jpg",
+>>>>>>> 609d6d7 (Add gallery view)
     "originalAvailable": false,
     "printAvailable": false,
     "digitalAvailable": true,
