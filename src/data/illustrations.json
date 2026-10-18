@@ -1,14 +1,58 @@
 [{
+    "id": "angelica-archangelica-2026_01",
+    "title": "Angelica archangelica",
+    "polishTitle": "Arcydzięgiel litwor",
+    "date": "2026-10-16",
+    "link": "/img/dziegiel-sm.jpg",
+    "originalAvailable": false,
+    "printAvailable": false,
+    "digitalAvailable": true,
+    "format": "A4",
+    "digitalResolution": "600dpi"
+},{
+    "id": "cichorium-intybus-2026_01",
+    "title": "Cichorium intybus",
+    "polishTitle": "Cykoria podróżnik",
+    "date": "2026-10-15",
+    "link": "/img/cykoria-sm.jpg",
+    "originalAvailable": false,
+    "printAvailable": false,
+    "digitalAvailable": true,
+    "format": "A4",
+    "digitalResolution": "600dpi"
+},{
     "id": "digitalis-purpurea-2026_01",
     "title": "Digitalis purpurea",
     "polishTitle": "Naparstnica purpurowa",
-    "date": "2026-10-15",
+    "date": "2026-10-14",
     "link": "/img/naparstnica-sm.jpg",
     "originalAvailable": true,
     "printAvailable": true,
     "digitalAvailable": true,
     "format": "A4",
     "digitalResolution": "600dpi"
+}, {
+    "id": "citrus-sinensis-2026_01",
+    "title": "Citrus sinensis",
+    "polishTitle": "Pomarańcza słodka",
+    "date": "2026-10-14",
+    "link": "/img/citrus-sm.jpg",
+    "originalAvailable": false,
+    "printAvailable": false,
+    "digitalAvailable": true,
+    "format": "A5",
+    "digitalResolution": "600dpi"   
+}, {
+    "id": "peonia-officinalis-2026_01",
+    "title": "Peonia officinalis",
+    "polishTitle": "Piwonia lekarska",
+    "date": "2026-10-13",
+    "link": "/img/peonia-sm.jpg",
+    "originalAvailable": false,
+    "printAvailable": false,
+    "digitalAvailable": true,
+    "format": "A5",
+    "digitalResolution": "600dpi"   
 }, {
     "id": "solanum-tuberosum-2026_01",
     "title": "Solanum tuberosum",

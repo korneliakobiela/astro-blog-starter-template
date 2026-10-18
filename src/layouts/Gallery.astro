@@ -1,0 +1,18 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhimsyHeader from '../components/WhimsyHeader.astro';
+---
+<html lang="pl">
+    <head>
+        <BaseHead title="Galeria ilustracji" description="Przeglądaj ilustracje botaniczne dostępne do kupienia i na licencji" />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <WhimsyHeader title="Galeria ilustracji" color="vintage-grape" />
+            <slot></slot>
+        </main>
+        <Footer />
+    </body>

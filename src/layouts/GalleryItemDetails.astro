@@ -1,0 +1,61 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Header from '../components/Header.astro';
+import ImageDetails from '../components/ImageDetails.astro';
+import BaseHead from '../components/BaseHead.astro';
+import DetailsDescription from '../components/DetailsDescription.astro';
+import Footer from '../components/Footer.astro';
+
+type Props = CollectionEntry<'illustrations'>['data'];
+const { title, polishTitle, link, date, originalAvailable } = Astro.props;
+const props = JSON.stringify(Astro.props);
+const description = `${title} - ilustracja botaniczna namalowana akwarelą, dostępna do kupienia i na licencji`;
+console.log('GalleryItemDetails props:', Astro.props);
+---
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <BaseHead title={title} description={description} />
+</head>
+<body>
+    <Header></Header>
+    <main>
+        <ImageDetails src={link} alt={description}>
+        <DetailsDescription
+            title={title}
+        >
+            <dl>
+                <dt>Gatunek</dt>
+                <dd>{polishTitle}</dd>
+                <dt>Rok powstania</dt>
+                <dd>{date.getFullYear()}</dd>
+                <dt>Oryginał</dt>
+                <dd>{originalAvailable ? 'Dostępny' : 'Niedostępny'}</dd>
+                <dt>Format</dt>
+                <dd>{Astro.props.format}</dd>
+                <dt>Jakość skanu</dt>
+                <dd>{Astro.props.digitalResolution}</dd>
+            </dl>
+        </DetailsDescription>
+        </ImageDetails>
+    </main>
+    <Footer></Footer>
+</body>
+<style>
+    dt {
+        font-weight: 600;
+        float: left;
+        clear: left;
+        align: right;
+        width: 160px;
+        text-align: right;
+    }
+    dt::after {
+        content: ':';
+    }
+    dd {
+        margin: 0 0 0 180px;
+        padding: 0 0 0.5em 0;
+    }
+</style>
+</html>

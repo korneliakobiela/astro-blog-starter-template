@@ -1,0 +1,32 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import Layout from '../../layouts/Gallery.astro';
+import ThumbnailGrid from '../../components/ThumbnailGrid.astro';
+import ImageThumbnail from '../../components/ImageThumbnail.astro';
+
+type Props = CollectionEntry<'illustrations'>['data'];
+
+const illustrations = (await getCollection('illustrations')).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+<Layout>
+    <ThumbnailGrid>
+        {illustrations.map((illustration) => (
+            <a href={`/ilustracje/${illustration.id}`}
+                title={illustration.data.polishTitle}
+                aria-label={illustration.data.polishTitle}>
+            <ImageThumbnail
+                src={illustration.data.link}
+                alt={illustration.data.polishTitle}
+                title={illustration.data.title}
+            />
+            </a>
+        ))}
+    </ThumbnailGrid>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+</Layout>
