@@ -1,10 +1,11 @@
 ---
+const { src, height } = Astro.props;
 ---
 <div class="image-details">
     <div class="image-frame">
         <picture>
-            <source srcset={Astro.props.src} type="image/jpg" />
-            <img src={Astro.props.src} alt={Astro.props.alt} class="image" />
+            <source srcset={src} type="image/jpg" />
+            <img src={src} alt={Astro.props.alt} class="image" />
         </picture>
     </div>
     <section class="image-info">
@@ -12,11 +13,12 @@
     </section>
 </div>
 
-<style>
+<style define:vars={{height}}>
     .image-details {
         width: 100%;
         max-width: 750px;
         margin: 1em auto;
+        height: var(--height);
         display: flex;
         justify-content: space-between;
         align-items: stretch;
@@ -43,6 +45,7 @@
         max-width: 100%;
         padding: 1em;
         min-height: 0;
+        height: var(--height);
         overflow: auto;
         background-color: var(--linen);
         box-sizing: border-box;

@@ -16,13 +16,16 @@ const { title, description, image } = Astro.props;
     <Header></Header>
     <nav class="submenu internal-links">
         <a href="/omnie/bio" class:list={[{ active: Astro.url.pathname === '/omnie/bio' }]}>Bio</a>
+        <a href="/omnie/wartosci" class:list={[{ active: Astro.url.pathname === '/omnie/wartosci' }]}>Wartości</a>
         <a href="/omnie/wystawy" class:list={[{ active: Astro.url.pathname === '/omnie/wystawy' }]}>Wystawy</a>
 
     </nav>
     <main>
-        <ImageDetails src={image} alt={title}>
+        <ImageDetails src={image} alt={title} height="480px">
         <DetailsDescription
             title={title}
+            class="description-block"
+            height="480"
         >
             <slot></slot>
         </DetailsDescription>
@@ -48,6 +51,15 @@ const { title, description, image } = Astro.props;
 
     main {
         padding: 1em;
+    }
+    
+    .image-info {
+        max-height: 480px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+        overflow: auto;
+        margin: auto;
     }
 
 </style>

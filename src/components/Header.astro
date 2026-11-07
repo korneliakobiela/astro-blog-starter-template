@@ -8,9 +8,9 @@ import { SITE_TITLE } from '../consts';
 		<div class="internal-links">
 			<HeaderLink href="/" class:list={[{ active: Astro.url.pathname === '/' }]}>Home</HeaderLink>
 			<HeaderLink href="/ilustracje" class:list={[{ active: Astro.url.pathname === '/ilustracje' }]}>Ilustracje</HeaderLink>
-			<HeaderLink href="/dopobrania" class:list={[{ active: Astro.url.pathname === '/dopobrania' }]}>Do pobrania</HeaderLink>
+			<HeaderLink href="jak-zamawiać" class:list={[{ active: Astro.url.pathname === '/jak-zamawiac' }]}>Jak zamawiać</HeaderLink>
 			<HeaderLink href="/omnie/bio" class:list={[{ active: Astro.url.pathname.startsWith('/omnie') }]}>O mnie</HeaderLink>
-			<HeaderLink href="/contact" class:list={[{ active: Astro.url.pathname === '/contact' }]}>Kontakt</HeaderLink>
+			<HeaderLink href="/kontakt" class:list={[{ active: Astro.url.pathname === '/kontakt' }]}>Kontakt</HeaderLink>
 		</div>
 	</nav>
 </header>

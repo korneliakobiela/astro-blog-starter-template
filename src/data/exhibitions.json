@@ -1,0 +1,19 @@
+[
+    {
+        "id": "wystawa-wianki",
+        "title": "Wianki letniego przesilenia",
+        "description": "Wystawa indywidualna prezentująca ilustracje roślin związanych z obchodami leniego przesilenia. W czasie wystawy zaprezentowano 10 akwareli botanicznych.",
+        "startDate": "2023-06-21",
+        "endDate": "2023-09-01",
+        "location": "Bibioteka na Woli Wypożyczalnia dla Dorosłych i Młodzieży nr 14 - \"Fantasmagoria\"",
+        "link": "https://bpwola.waw.pl/wydarzenia/1607-wernisaz-wystawy-wianki-letniego-przesilenia-kornelia-kobiela"
+    }, {
+        "id": "fenomeny-warszawy",
+        "title": "Wieloznaczna. Fenomeny Warszawy",
+        "description": "Wystawa zbiorowa prezentująca dorobek wielu artystów, którzy w swoich pracach przedstawili różne aspekty życia w Warszawie. Wystawa była częścią projektu \"Wieloznaczna. Fenomeny Warszawy\" realizowanego przez Muzeum Warszawy.",
+        "startDate":"2026-10-28",
+        "endDate": "2027-04-25",
+        "location": "Muzeum Warszawy",
+        "link": "https://muzeumwarszawy.pl/wystawa/wieloznaczna-fenomeny-warszawy/" 
+    }
+]

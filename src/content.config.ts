@@ -36,4 +36,17 @@ const illustrations = defineCollection({
 		digitalResolution: z.enum(['300dpi', '600dpi', '1200dpi']).optional(),
 	}),
 });
-export const collections = { blog, images, illustrations };
+
+const exhibitions = defineCollection({
+	loader: file('src/data/exhibitions.json'),
+	schema: z.object({
+		id: z.string(),
+		title: z.string(),
+		description: z.string().optional(),
+		startDate: z.coerce.date(),
+		endDate: z.coerce.date().optional(),
+		location: z.string(),
+		link: z.string().optional(),
+	}),
+});
+export const collections = { blog, images, illustrations, exhibitions };
