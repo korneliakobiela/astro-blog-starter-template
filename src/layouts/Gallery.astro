@@ -1,6 +1,7 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import Filters from '../components/Filters.astro';
 import Footer from '../components/Footer.astro';
 import WhimsyHeader from '../components/WhimsyHeader.astro';
 ---
@@ -12,6 +13,7 @@ import WhimsyHeader from '../components/WhimsyHeader.astro';
         <Header />
         <main>
             <WhimsyHeader title="Galeria ilustracji" color="vintage-grape" />
+            <Filters />
             <slot></slot>
         </main>
         <Footer />

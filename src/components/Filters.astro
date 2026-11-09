@@ -1,0 +1,73 @@
+<nav>
+    <button id="buy-button">Do kupienia</button>
+    <button id="license-button">Na licencji</button>
+</nav>
+<style>
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    button {
+        background-color: var(--vintage-grape);
+        color: var(--linen);
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-family: "Cantarell", sans-serif;
+        text-transform: uppercase;
+    }
+
+    button.active {
+        background-color: var(--linen);
+        color: var(--vintage-grape);
+    }
+
+    input[type="text"] {
+        padding: 0.5rem;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+</style>
+<script>
+    const buyButton = document.getElementById('buy-button');
+    const licenseButton = document.getElementById('license-button');
+    const locationURL = new URL(window.location.href);
+    const isBuyActive = locationURL.searchParams.get('buy') === 'true';
+    const isLicenseActive = locationURL.searchParams.get('license') === 'true';
+
+    if (isBuyActive && buyButton) {
+        buyButton.classList.add('active');
+    }
+    if (isLicenseActive && licenseButton) {
+        licenseButton.classList.add('active');
+    }
+
+    if (buyButton && licenseButton) {
+        buyButton.addEventListener('click', () => {
+            buyButton.classList.toggle('active');
+            if(buyButton.classList.contains('active')) {
+                locationURL.searchParams.set('buy', 'true');
+            } else {
+                locationURL.searchParams.delete('buy');
+            }
+            window.location.href = locationURL.toString();
+            // Add logic to filter illustrations for sale
+        });
+
+        licenseButton.addEventListener('click', () => {
+            licenseButton.classList.toggle('active');
+            locationURL.searchParams.set('license', 'true');
+            if(licenseButton.classList.contains('active')) {
+                locationURL.searchParams.set('license', 'true');
+            } else {
+                locationURL.searchParams.delete('license');
+            }
+            window.location.href = locationURL.toString();
+            // Add logic to filter illustrations for licensing
+        });
+    }
+</script>

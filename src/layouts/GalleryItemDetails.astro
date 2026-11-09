@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import { type CollectionEntry, getCollection } from 'astro:content';
 import Header from '../components/Header.astro';
 import ImageDetails from '../components/ImageDetails.astro';
 import BaseHead from '../components/BaseHead.astro';
@@ -7,10 +7,16 @@ import DetailsDescription from '../components/DetailsDescription.astro';
 import Footer from '../components/Footer.astro';
 
 type Props = CollectionEntry<'illustrations'>['data'];
-const { title, polishTitle, link, date, originalAvailable } = Astro.props;
-const props = JSON.stringify(Astro.props);
-const description = `${title} - ilustracja botaniczna namalowana akwarelą, dostępna do kupienia i na licencji`;
-console.log('GalleryItemDetails props:', Astro.props);
+const { title, polishTitle, link, date, originalAvailable, id } = Astro.props;
+const description = `${title} - ilustracja botaniczna namalowana akwarelą`;
+
+const illustrationIds = (await getCollection('illustrations')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+).map((illustration) => illustration.id);
+
+const currentIndex = illustrationIds.indexOf(id);
+const previousId = currentIndex > 0 ? illustrationIds[currentIndex - 1] : null;
+const nextId = currentIndex < illustrationIds.length - 1 ? illustrationIds[currentIndex + 1] : null;
 ---
 <!DOCTYPE html>
 <html lang="pl">
@@ -38,6 +44,10 @@ console.log('GalleryItemDetails props:', Astro.props);
             </dl>
         </DetailsDescription>
         </ImageDetails>
+       <nav>
+        <a href={`/ilustracje/${previousId}`} hidden={previousId == null}>Poprzednia</a>
+        <a href={`/ilustracje/${nextId}`} hidden={nextId == null}>Następna</a>
+       </nav>
     </main>
     <Footer></Footer>
 </body>

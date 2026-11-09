@@ -1,32 +1,57 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import Layout from '../../layouts/Gallery.astro';
-import ThumbnailGrid from '../../components/ThumbnailGrid.astro';
-import ImageThumbnail from '../../components/ImageThumbnail.astro';
+import { type CollectionEntry, getCollection } from "astro:content";
+import Layout from "../../layouts/Gallery.astro";
+import ThumbnailGrid from "../../components/ThumbnailGrid.astro";
+import ImageThumbnail from "../../components/ImageThumbnail.astro";
 
-type Props = CollectionEntry<'illustrations'>['data'];
+type Props = CollectionEntry<"illustrations">["data"];
+export const prerender = false;
+const searchParams = Astro.url.searchParams;
+const isBuyAvailable = searchParams.get("buy") === "true";
+const isLicenseAvailable = searchParams.get("license") === "true";
 
-const illustrations = (await getCollection('illustrations')).sort(
-	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+const illustrations = (await getCollection("illustrations", ({data}) => {
+    if (isBuyAvailable && !data.originalAvailable) {
+        return false;
+    }
+    if (isLicenseAvailable && !data.digitalAvailable) {
+        return false;
+    }
+    return true;
+})).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
+
 <Layout>
     <ThumbnailGrid>
-        {illustrations.map((illustration) => (
-            <a href={`/ilustracje/${illustration.id}`}
-                title={illustration.data.polishTitle}
-                aria-label={illustration.data.polishTitle}>
-            <ImageThumbnail
-                src={illustration.data.link}
-                alt={illustration.data.polishTitle}
-                title={illustration.data.title}
-            />
-            </a>
-        ))}
+        {
+            illustrations.map((illustration) => (
+                <a
+                    href={`/ilustracje/${illustration.id}`}
+                    title={illustration.data.polishTitle}
+                    aria-label={illustration.data.polishTitle}
+                >
+                    <ImageThumbnail
+                        src={illustration.data.link}
+                        alt={illustration.data.polishTitle}
+                        title={illustration.data.title}
+                    />
+                </a>
+            ))
+        }
     </ThumbnailGrid>
     <style>
         a {
             text-decoration: none;
         }
     </style>
+    <script>
+        navigation.addEventListener("navigate", (event) => {
+            const url = new URL(event.destination.url);
+            const isBuyActive = url.searchParams.get("buy") === "true";
+            const isLicenseActive = url.searchParams.get("license") === "true";
+            
+        });
+    </script>
 </Layout>
